@@ -8,18 +8,43 @@ POST http://localhost:3333/videos
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
 
 ------WebKitFormBoundary7MA4YWxkTrZu0gW
-Content-Disposition: form-data; name="file"; filename="vintage.mp3"
+Content-Disposition: form-data; name="file"; filename="sacani.mp3"
 Content-Type: audio/mpeg
 
-< ./vintage.mp3
+< ./sacani.mp3
 ------WebKitFormBoundary7MA4YWxkTrZu0gW--
 
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/2986020c-0756-46b5-a017-f0ab7cf83294/transcription
+POST http://localhost:3333/videos/8afe1778-3df4-4c93-a96f-15bec54b89fd/transcription
 Content-Type: application/json
 
 {
-    "prompt": "vintage culture, music, low, doses"
+    "prompt": "sergio sacani, gym, cariani, foguete"
 }
+
+###
+
+# @name create-subtitle
+POST http://localhost:3333/videos/9076c061-eb85-4cc5-af75-47a627e4a399/subtitle
+Content-Type: application/json
+
+{
+    "prompt": "sergio sacani, gym, cariani, foguete, subtitle, astrologia, max_line_length: 42"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+    "videoId": "3e4e3a89-c6c7-4387-bf99-c64da563dd68",
+    "prompt": "Gere um resumo sucinto da transcrição do vídeo informado a seguir: '''{transcription}'''",
+    "temperature": 0.5
+}
+
+### @name clear-tmp-files
+POST http://localhost:3333/clear-tmp-files
