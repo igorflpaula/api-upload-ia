@@ -17,11 +17,11 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/8afe1778-3df4-4c93-a96f-15bec54b89fd/transcription
+POST http://localhost:3333/videos/8b3a193f-3a68-488c-9365-0607ffcff47f/transcription
 Content-Type: application/json
 
 {
-    "prompt": "sergio sacani, gym, cariani, foguete"
+    "prompt": "sergio sacani, gym, cariani, foguete, max_line_lenght: 42, two speaker"
 }
 
 ###

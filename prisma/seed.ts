@@ -60,10 +60,22 @@ async function main() {
 
   await prisma.prompt.create({
     data: {
-      title: 'Legenda da Aula',
-      template: `Seu papel é formatar uma transcrição.
+      title: 'Criação de ATA',
+      template: `Seu papel é formatar uma ATA de AGE.
 
-Abaixo você receberá uma transcrição, que deverá ser formatada para a extensão srt, removendo tudo que não será usado.
+Abaixo você receberá uma transcrição do que foi discutido durante a AGE, use essa transcrição para formatar a ATA.
+
+Transcrição:
+'''
+{transcription}
+'''`.trim()
+    }
+  })
+
+  await prisma.prompt.create({
+    data: {
+      title: 'Transcrição',
+      template: `Seu papel é formatar o texto.
 
 Transcrição:
 '''

@@ -16,10 +16,10 @@ app.register(fastifyCors, {
 })
 
 app.get('/', async () => {
-    return 'Hello there! 👋'
+    return 'Hello World! 👋'
   })
 
-// TO DO - Colocar as rotas em PT
+// TO DO - Colocar as rotas em PT 
 app.register(getAllPromptsRoute)
 app.register(uploadVideoRoute)
 app.register(createTranscriptionRoute)
